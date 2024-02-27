@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { nextPage } from "../utils/trackerSlice";
 import NextBtn from "./NextBtn";
 import { setPersonalInfo } from "../utils/personalInfoSlice";
+import Navigator from "./Navigator";
 
 const PersonalInfo = () => {
   const personalInfo = useSelector((state) => state.personalInfo);
@@ -12,7 +13,8 @@ const PersonalInfo = () => {
   const [phone, setPhone] = useState(personalInfo?.phone);
   const [error, setError] = useState(-1);
 
-  const handleNextClick = () => {
+  const handleNextClickPageOne = () => {
+    console.log("clicked 1");
     if (name === "") return setError(1);
     if (email === "") return setError(2);
     if (phone === "") return setError(3);
@@ -94,8 +96,9 @@ const PersonalInfo = () => {
           onChange={(e) => setPhone(e.target.value)}
         />
       </form>
-      <div className="max-md:absolute flex flex-row justify-between md:mt-20 bg-white max-md:bottom-0 max-md:w-screen max-md:-ml-12 max-md:p-4">
-        <NextBtn handleClick={handleNextClick} />
+      <Navigator onClickPageOne={handleNextClickPageOne} />
+      <div className="hidden md:flex flex-row justify-between md:mt-20 bg-white max-md:bottom-0 max-md:w-screen max-md:-ml-12 max-md:p-4">
+        <NextBtn handleClick={handleNextClickPageOne} />
       </div>
     </div>
   );

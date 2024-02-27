@@ -5,6 +5,7 @@ import NextBtn from "./NextBtn";
 import { addOnData } from "../utils/constants";
 import { toggleItem } from "../utils/addOnsSlice";
 import { useState } from "react";
+import Navigator from "./Navigator";
 
 const AddOns = () => {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ const AddOns = () => {
   const handleGoBackClick = () => {
     dispatch(prevPage());
   };
-  const handleNextClick = () => {
+  const handleNextClickPageThree = () => {
     const selectedAddOns = Object.keys(addOns).filter((key) => addOns[key]);
     if (selectedAddOns.length === 0) {
       setError(true);
@@ -131,9 +132,11 @@ const AddOns = () => {
           </div>
         </button>
       </div>
-      <div className="max-md:absolute flex flex-row justify-between md:mt-20 bg-white max-md:bottom-0 max-md:w-screen max-md:-ml-12 max-md:p-4">
+      <Navigator />
+      <Navigator onClickPageThree={handleNextClickPageThree} />
+      <div className="hidden md:flex flex-row justify-between md:mt-20 bg-white max-md:bottom-0 max-md:w-screen max-md:-ml-12 max-md:p-4">
         {<GoBackBtn handleClick={handleGoBackClick} />}
-        <NextBtn handleClick={handleNextClick} />
+        <NextBtn handleClick={handleNextClickPageThree} />
       </div>
     </div>
   );

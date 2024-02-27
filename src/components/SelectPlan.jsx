@@ -11,6 +11,7 @@ import GoBackBtn from "./GoBackBtn";
 import NextBtn from "./NextBtn";
 import { planData } from "../utils/constants";
 import { setBillingCycle } from "../utils/billingCycleSlice";
+import Navigator from "./Navigator";
 
 const SelectPlan = () => {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ const SelectPlan = () => {
   const handleGoBackClick = () => {
     dispatch(prevPage());
   };
-  const handleNextClick = () => {
+  const handleNextClickPageTwo = () => {
     if (premium === null) return;
     dispatch(setPlanId(planData[premium - 1].id));
     dispatch(nextPage());
@@ -127,9 +128,10 @@ const SelectPlan = () => {
           Yearly
         </div>
       </div>
-      <div className="max-md:absolute flex flex-row justify-between md:mt-20 bg-white max-md:bottom-0 max-md:w-screen max-md:-ml-12 max-md:p-4">
+      <Navigator onClickPageTwo={handleNextClickPageTwo} />
+      <div className="hidden md:flex flex-row justify-between md:mt-20 bg-white max-md:bottom-0 max-md:w-screen max-md:-ml-12 max-md:p-4">
         {<GoBackBtn handleClick={handleGoBackClick} />}
-        <NextBtn handleClick={handleNextClick} />
+        <NextBtn handleClick={handleNextClickPageTwo} />
       </div>
     </div>
   );
