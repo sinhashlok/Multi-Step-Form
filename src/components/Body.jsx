@@ -4,7 +4,6 @@ import AddOns from "./AddOns";
 import Summary from "./Summary";
 import Panel from "./Panel";
 import { useSelector } from "react-redux";
-import Navigator from "./Navigator";
 
 const Body = () => {
   const page = useSelector((state) => state.tracker.page);
