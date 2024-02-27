@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const trackerSlice = createSlice({
   name: "tracker",
   initialState: {
-    page: 1,
+    page: 3,
   },
   reducers: {
     nextPage: (state) => {

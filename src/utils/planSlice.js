@@ -3,16 +3,14 @@ import { createSlice } from "@reduxjs/toolkit";
 const planSlice = createSlice({
   name: "plan",
   initialState: {
-    plan: "",
-    tenure: ""
+    planId: 1,
   },
   reducers: {
-    setPlan: (state, action) => {
-      state.plan = action.payload.plan;
-      state.tenure = action.payload.tenure;
+    setPlanId: (state, action) => {
+      state.planId = action.payload;
     },
   },
 });
 
-export const { setPlan } = planSlice.actions;
+export const { setPlanId } = planSlice.actions;
 export default planSlice.reducer;

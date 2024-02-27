@@ -36,14 +36,13 @@ const PersonalInfo = () => {
         Please provide your name, email address, and phone number.
       </p>
       <form className="flex flex-col mt-10">
-        <div>
-          {error === 1 ? (
+        <div className="flex flex-row justify-between">
+          <div className="text-[#02295a] text-[14px] md:text-[18px] font-ubuntuN">
+            Name
+          </div>
+          {error === 1 && (
             <div className="text-[#ed3548] text-[14px] md:text-[18px] text-right font-ubuntuN">
               This field is required
-            </div>
-          ) : (
-            <div className="text-[#02295a] text-[14px] md:text-[18px] font-ubuntuN">
-              Name
             </div>
           )}
         </div>
@@ -56,14 +55,13 @@ const PersonalInfo = () => {
           }`}
           onChange={(e) => setName(e.target.value)}
         />
-        <div>
-          {error === 2 ? (
+        <div className="flex flex-row justify-between">
+          <div className="text-[#02295a] text-[14px] md:text-[18px] font-ubuntuN">
+            Email
+          </div>
+          {error === 2 && (
             <div className="text-[#ed3548] text-[14px] md:text-[18px] text-right font-ubuntuN">
               This field is required
-            </div>
-          ) : (
-            <div className="text-[#02295a] text-[14px] md:text-[18px] font-ubuntuN">
-              Email Address
             </div>
           )}
         </div>
@@ -76,14 +74,13 @@ const PersonalInfo = () => {
           }`}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <div>
-          {error === 3 ? (
+        <div className="flex flex-row justify-between">
+          <div className="text-[#02295a] text-[14px] md:text-[18px] font-ubuntuN">
+            Phone
+          </div>
+          {error === 3 && (
             <div className="text-[#ed3548] text-[14px] md:text-[18px] text-right font-ubuntuN">
               This field is required
-            </div>
-          ) : (
-            <div className="text-[#02295a] text-[14px] md:text-[18px] font-ubuntuN">
-              Phone
             </div>
           )}
         </div>
