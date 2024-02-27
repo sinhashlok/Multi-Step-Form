@@ -4,6 +4,7 @@ import { nextPage } from "../utils/trackerSlice";
 import NextBtn from "./NextBtn";
 import { setPersonalInfo } from "../utils/personalInfoSlice";
 import Navigator from "./Navigator";
+import checkValidData from "../utils/validate";
 
 const PersonalInfo = () => {
   const personalInfo = useSelector((state) => state.personalInfo);
@@ -12,12 +13,42 @@ const PersonalInfo = () => {
   const [email, setEmail] = useState(personalInfo?.email);
   const [phone, setPhone] = useState(personalInfo?.phone);
   const [error, setError] = useState(-1);
+  const [errMssg, setErrMssg] = useState("");
 
   const handleNextClickPageOne = () => {
-    console.log("clicked 1");
-    if (name === "") return setError(1);
-    if (email === "") return setError(2);
-    if (phone === "") return setError(3);
+    if (name === "") {
+      setError(1);
+      setErrMssg("This field is required");
+      return;
+    }
+    if (email === "") {
+      setError(2);
+      setErrMssg("This field is required");
+      return;
+    }
+    if (phone === "") {
+      setError(3);
+      setErrMssg("This field is required");
+    }
+
+    const error = checkValidData(name, email, phone);
+    if (error !== null) {
+      console.log(error.message);
+      if (error.message === "1") {
+        setError(1);
+        setErrMssg("Invalid full name");
+      }
+      if (error.message === "2") {
+        setError(2);
+        setErrMssg("Invalid email");
+      }
+      if (error.message === "3") {
+        setError(3);
+        setErrMssg("Invalid phone number");
+      }
+      return;
+    }
+    console.log(error);
     setError(-1);
     dispatch(
       setPersonalInfo({
@@ -44,7 +75,7 @@ const PersonalInfo = () => {
           </div>
           {error === 1 && (
             <div className="text-[#ed3548] text-[14px] md:text-[18px] text-right font-ubuntuN">
-              This field is required
+              {errMssg}
             </div>
           )}
         </div>
@@ -63,7 +94,7 @@ const PersonalInfo = () => {
           </div>
           {error === 2 && (
             <div className="text-[#ed3548] text-[14px] md:text-[18px] text-right font-ubuntuN">
-              This field is required
+              {errMssg}
             </div>
           )}
         </div>
@@ -82,7 +113,7 @@ const PersonalInfo = () => {
           </div>
           {error === 3 && (
             <div className="text-[#ed3548] text-[14px] md:text-[18px] text-right font-ubuntuN">
-              This field is required
+              {errMssg}
             </div>
           )}
         </div>

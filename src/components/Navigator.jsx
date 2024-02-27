@@ -5,6 +5,8 @@ const Navigator = ({
   onClickPageOne,
   onClickPageTwo,
   onClickPageThree,
+  onClickPageFour,
+  nextText,
 }) => {
   const dispatch = useDispatch();
   const page = useSelector((state) => state.tracker.page);
@@ -16,6 +18,7 @@ const Navigator = ({
     if (page === 1) onClickPageOne();
     if (page === 2) onClickPageTwo();
     if (page === 3) onClickPageThree();
+    if (page === 4) onClickPageFour();
   };
 
   return (
@@ -32,7 +35,7 @@ const Navigator = ({
         className={`bg-[#02295a] hover:bg-[#473dff] cursor-pointer md:mt-[0px] ml-auto p-2 md:p-2 md:py-3 text-[14px] md:text-[18px] text-[#f0f6ff] rounded-lg font-ubuntuN`}
         onClick={handleNextClick}
       >
-        Next Step
+        {nextText ? nextText : "Next"}
       </button>
     </div>
   );

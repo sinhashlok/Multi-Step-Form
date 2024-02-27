@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const trackerSlice = createSlice({
   name: "tracker",
   initialState: {
-    page: 3,
+    page: 1,
   },
   reducers: {
     nextPage: (state) => {
@@ -12,8 +12,11 @@ const trackerSlice = createSlice({
     prevPage: (state) => {
       state.page -= 1;
     },
+    changePage: (state) => {
+      state.page = 2;
+    },
   },
 });
 
-export const { nextPage, prevPage } = trackerSlice.actions;
+export const { nextPage, prevPage, changePage } = trackerSlice.actions;
 export default trackerSlice.reducer;
