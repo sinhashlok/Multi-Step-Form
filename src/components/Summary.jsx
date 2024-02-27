@@ -1,17 +1,17 @@
-import { useDispatch } from "react-redux";
-import GoBackBtn from "./GoBackBtn";
-import NextBtn from "./NextBtn";
-import { nextPage, prevPage } from "../utils/trackerSlice";
+// import { useDispatch } from "react-redux";
+// import GoBackBtn from "./GoBackBtn";
+// import NextBtn from "./NextBtn";
+// import { nextPage, prevPage } from "../utils/trackerSlice";
 import Navigator from "./Navigator";
 
 const Summary = () => {
-  const dispatch = useDispatch();
-  const handleGoBackClick = () => {
-    dispatch(prevPage());
-  };
-  const handleNextClick = () => {
-    // dispatch(nextPage());
-  };
+  // const dispatch = useDispatch();
+  // const handleGoBackClick = () => {
+  //   dispatch(prevPage());
+  // };
+  // const handleNextClick = () => {
+  //   // dispatch(nextPage());
+  // };
   return (
     <div className="flex flex-col md:ml-52 md:mt-20">
       <h1 className="font-ubuntuD text-[28px] md:text-[56px] text-[#02295a]">
