@@ -42,10 +42,6 @@ const PersonalInfo = () => {
         setError(2);
         setErrMssg("Invalid email");
       }
-      if (error.message === "3") {
-        setError(3);
-        setErrMssg("Invalid phone number");
-      }
       return;
     }
     console.log(error);
@@ -62,19 +58,19 @@ const PersonalInfo = () => {
 
   return (
     <div className="flex flex-col md:ml-52 md:mt-20">
-      <h1 className="font-ubuntuD text-[28px] md:text-[56px] text-[#02295a]">
+      <h1 className="font-ubuntuD text-[28px] md:text-[32px] text-[#02295a]">
         Personal info
       </h1>
-      <p className="font-ubuntuN text-[18px] md:text-[24px] text-[#9699ab]">
+      <p className="font-ubuntuN text-[18px] text-[#9699ab]">
         Please provide your name, email address, and phone number.
       </p>
       <form className="flex flex-col mt-10">
         <div className="flex flex-row justify-between">
-          <div className="text-[#02295a] text-[14px] md:text-[18px] font-ubuntuN">
+          <div className="text-[#02295a] text-[14px] md:text-[16px] font-ubuntuN">
             Name
           </div>
           {error === 1 && (
-            <div className="text-[#ed3548] text-[14px] md:text-[18px] text-right font-ubuntuN">
+            <div className="text-[#ed3548] text-[14px] md:text-[16px] text-right font-ubuntuN">
               {errMssg}
             </div>
           )}
@@ -83,17 +79,17 @@ const PersonalInfo = () => {
           type="text"
           value={name}
           placeholder="e.g. Stephen King"
-          className={`border border-[#d6d9e6] rounded-md p-2 md:p-4 text-[16px] md:text-[18px] font-ubuntuM mb-6 text-[#02295a] focus:outline-none focus:border-2 focus:border-[#473dff] placeholder-shown:font-ubuntuN ${
+          className={`border border-[#d6d9e6] rounded-md p-2 md:p-4 text-[16px] md:text-[16px] font-ubuntuM mb-6 text-[#02295a] focus:outline-none focus:border-2 focus:border-[#473dff] placeholder-shown:font-ubuntuN ${
             error === 1 && "border-2 border-[#ed3548]"
           }`}
           onChange={(e) => setName(e.target.value)}
         />
         <div className="flex flex-row justify-between">
-          <div className="text-[#02295a] text-[14px] md:text-[18px] font-ubuntuN">
+          <div className="text-[#02295a] text-[14px] md:text-[16px] font-ubuntuN">
             Email
           </div>
           {error === 2 && (
-            <div className="text-[#ed3548] text-[14px] md:text-[18px] text-right font-ubuntuN">
+            <div className="text-[#ed3548] text-[14px] md:text-[16px] text-right font-ubuntuN">
               {errMssg}
             </div>
           )}
@@ -102,17 +98,17 @@ const PersonalInfo = () => {
           type="email"
           value={email}
           placeholder="e.g. stephenking@lorem.com"
-          className={`border border-[#d6d9e6] rounded-md p-2 md:p-4 text-[16px] md:text-[18px] font-ubuntuM mb-6 text-[#02295a] focus:outline-none focus:border-2 focus:border-[#473dff] placeholder-shown:font-ubuntuN ${
+          className={`border border-[#d6d9e6] rounded-md p-2 md:p-4 text-[16px] md:text-[16px] font-ubuntuM mb-6 text-[#02295a] focus:outline-none focus:border-2 focus:border-[#473dff] placeholder-shown:font-ubuntuN ${
             error === 2 && "border-2 border-[#ed3548]"
           }`}
           onChange={(e) => setEmail(e.target.value)}
         />
         <div className="flex flex-row justify-between">
-          <div className="text-[#02295a] text-[14px] md:text-[18px] font-ubuntuN">
+          <div className="text-[#02295a] text-[14px] md:text-[16px] font-ubuntuN">
             Phone
           </div>
           {error === 3 && (
-            <div className="text-[#ed3548] text-[14px] md:text-[18px] text-right font-ubuntuN">
+            <div className="text-[#ed3548] text-[14px] md:text-[16px] text-right font-ubuntuN">
               {errMssg}
             </div>
           )}
@@ -121,7 +117,7 @@ const PersonalInfo = () => {
           type="text"
           value={phone}
           placeholder="e.g. +1 234 567 890"
-          className={`border border-[#d6d9e6] rounded-md p-2 md:p-4 text-[16px] md:text-[18px] font-ubuntuM placeholder-shown:font-ubuntuN focus:outline-none focus:border-2 focus:border-[#473dff] ${
+          className={`border border-[#d6d9e6] rounded-md p-2 md:p-4 text-[16px] md:text-[16px] font-ubuntuM placeholder-shown:font-ubuntuN focus:outline-none focus:border-2 focus:border-[#473dff] ${
             error === 3 && "border-2 border-[#ed3548]"
           }`}
           onChange={(e) => setPhone(e.target.value)}

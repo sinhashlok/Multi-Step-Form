@@ -40,11 +40,11 @@ const Summary = () => {
 
   return (
     <div className="flex flex-col md:ml-52 md:mt-20">
-      <h1 className="font-ubuntuD text-[28px] md:text-[56px] text-[#02295a]">
-        Pick add-ons
+      <h1 className="font-ubuntuD text-[28px] md:text-[32px] text-[#02295a]">
+        Finshing up
       </h1>
-      <p className="font-ubuntuN text-[18px] md:text-[24px] text-[#9699ab]">
-        Add-ons help enhance your gaming experience.
+      <p className="font-ubuntuN text-[18px] text-[#9699ab]">
+        Double-check everything looks OK before confirming.
       </p>
       <div className="flex flex-col mt-10 md:mt-14">
         <div className="bg-[#f0f6ff] flex-col p-4 md:p-6 rounded-lg">
@@ -97,10 +97,13 @@ const Summary = () => {
           </p>
         </div>
       </div>
-      <Navigator onClickPageFour={handleNextClickPageFour} nextText={"Confirm"}/>
+      <Navigator
+        onClickPageFour={handleNextClickPageFour}
+        nextText={"Confirm"}
+      />
       <div className="hidden md:flex flex-row justify-between md:mt-20 bg-white max-md:bottom-0 max-md:w-screen max-md:-ml-12 max-md:p-4">
         {<GoBackBtn handleClick={handleGoBackClick} />}
-        <NextBtn handleClick={handleNextClickPageFour} nextText={"Confirm"}/>
+        <NextBtn handleClick={handleNextClickPageFour} nextText={"Confirm"} />
       </div>
     </div>
   );

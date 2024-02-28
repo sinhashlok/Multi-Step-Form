@@ -36,10 +36,10 @@ const SelectPlan = () => {
 
   return (
     <div className="flex flex-col md:ml-52 md:mt-20">
-      <h1 className="font-ubuntuD text-[28px] md:text-[56px] text-[#02295a]">
+      <h1 className="font-ubuntuD text-[28px] md:text-[32px] text-[#02295a]">
         Select your plan
       </h1>
-      <p className="font-ubuntuN text-[18px] md:text-[24px] text-[#9699ab]">
+      <p className="font-ubuntuN text-[18px] text-[#9699ab]">
         You have the option of monthly or yearly billing.
       </p>
       <div className="flex flex-col md:flex-row md:justify-between mt-10 md:mt-14">
